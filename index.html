@@ -8,7 +8,7 @@
 </head>
 <body>
   <!-- Sessão HEADER -->
-  <header class="flex-center">
+  <header class="flex-center"> <!-- class "flex-center" -> linha 36 do arquivo 'assets/css/style.css' -->
     <h1 id="title-header">Hector VS</h1>
     <p>portfólio</p>
     <div id="ball" class="flex-center"><a href="#sec1"><p>V</p></a></div>
@@ -20,9 +20,10 @@
         <h1 class="code">public function <span class="destaque">sobreMim()</span>{</h1>
       </div>
       <div class="card">
-        <picture>
-          <source media="(max-width: 900px)" srcset="/assets/img/hector-mobile.png" type="image/png" id="hectimg-mobile">
-          <img src="/assets/img/hector.png" alt="imagem flexível" id="hectimg">
+        <picture> <!-- Tag responsiva HTML -->
+          <!-- Imagem carregada de acordo com o atributo 'media'. (OBS: é possível criar mais <source>'s com diferentes media's, assim como o Media Queries no CSS) -->
+          <source media="(max-width: 900px)" srcset="/assets/img/hector-mobile.png" type="image/png" id="hectimg-mobile"> 
+          <img src="/assets/img/hector.png" alt="imagem flexível" id="hectimg"> <!-- Imagem padrão -->
         </picture>
         <div class="content">
           <p>"Sou formado em Desenvolvimento de Sistemas pela Etec de Peruíbe. Atualmente estou cursando Engenharia de Software na PUCPR. Desenvolvo projetos em PHP e trabalho como freelancer há 2 anos. Ao longo desse tempo, aprimorei meus conhecimentos, habilidades ecompetências na área da progamação back-end."</p>
@@ -41,7 +42,36 @@
         <h1 class="code">$hector = new Dev();</h1>
         <h1 class="code">$hector->listar<span class="destaque">Habilidades()</span>;</h1>
       </div>
+      <!-- Lista das logos. a tag <abbr> faz com que uma legenda (no atributo tittle) apareça ao manter o ponteiro do mouse em cima do elemento -->
+      <div class="flexbox">
+        <abbr title="PHP"><a href="https://www.php.net/" target="_blank"><img src="assets/img/php.png" alt="PHP"></a></abbr>
+        <abbr title="Composer"><a href="https://getcomposer.org/" target="_blank"><img src="assets/img/composer.png" alt="Composer"></a></abbr>
+        <abbr title="SQL (Banco de Dados)"><a href="https://pt.wikipedia.org/wiki/SQL" target="_blank"><img src="assets/img/sql.png" alt="SQL"></a></abbr>
+        <abbr title="Git (Versionamento)"><a href="https://git-scm.com/" target="_blank"><img src="assets/img/git.png" alt="Git"></a></abbr>
+        <abbr title="HTML"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"><img src="assets/img/html.png" alt="HTML"></a></abbr>
+        <abbr title="CSS"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img src="assets/img/css.png" alt="CSS"></a></abbr>
+        <abbr title="JavaScript"><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank"><img src="assets/img/javascript.png" alt="JavaScript"></a></abbr>
+        <abbr title="React JS"><a href="https://react.dev/" target="_blank"><img src="assets/img/react.png" alt="ReactJS"></a></abbr>
+      </div>
     </div>
   </section>
+  <!-- SESSÃO 3 -->
+  <section id="sec3" class="flex-center">
+    <div class="flex-center">
+      <div class="div-code">
+        <h1 class="code">$hector->listar<span class="destaque">SoftSkills()</span>;</h1>
+      </div>
+      <div class="flexbox">
+        <div class="box flex-center"><p>Trabalho em equipe</p></div>
+        <div class="box flex-center"><p>Comunicação</p></div>
+        <div class="box flex-center"><p>Scrum</p></div>
+        <div class="box flex-center"><p>Foco</p></div>
+        <div class="box flex-center"><p>Adaptabilidade</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSÃO 4 -->
+
 </body>
 </html>
