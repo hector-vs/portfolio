@@ -19,6 +19,16 @@ html{
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  background-color: #1a1a1a;
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4554de5d;
+  border-radius: 10px;
+}
+
 body {
   background-color: var(--black);
 }
@@ -44,7 +54,7 @@ h1#title-header {
 }
 
 p {
-  font-family: var(--displayFont);
+  font-family: var(--font);
   color: var(--white);
 }
 
@@ -53,7 +63,7 @@ a {
 }
 
 header {
-  border: 3px dotted var(--purple);
+  /* border: 3px dotted var(--purple); */
   height: 100vh;
   flex-direction: column;
   gap: 5px;
@@ -64,6 +74,8 @@ header > p {
   font-style: italic;
   font-weight: lighter;
   font-size: 1.2em;
+  font-family: var(--displayFont);
+
 }
 
 #ball {
@@ -96,18 +108,67 @@ div#ball p:hover {
 /* SECTION */
 section {
   height: 90vh;
-  border: 3px dotted var(--purple);
+  /* border: 3px dotted var(--purple); */
 }
 
 .code {
   color: #ffffff4b;
+  font-weight: lighter;
+}
+
+.div-code {
+  width: 880px;
+  justify-content: left;
+}
+
+span.destaque {
+  color: var(--purple);
+  font-size: 130%;
+  font-weight: bold;
 }
 
 /* SECTION 1 */
 section#sec1 > div {
+  /* border: 3px dotted var(--purple); */
+  flex-direction: column;
+  max-width: 880px;
+  gap: 50px;
+}
+
+div.card {
+  display: flex;
+  border-radius: 10px;
+  width: 700px;
+  height: 280px;
+  box-shadow: 0px 0px 120px #4554de8c;
+  background-color: #24242494;
+}
+
+#hectimg {
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+div.card > div.content {
+  flex: 1; /* Ocupa todo o espaço restante */
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+div.content > p {
+  font-size: 1.15em;
+}
+
+/* SECTION 2 */
+
+section#sec2 > div {
   border: 3px dotted var(--purple);
   flex-direction: column;
-
+  max-width: 880px;
+  gap: 50px;
 }
 
 @media (max-width: 900px){
@@ -118,5 +179,43 @@ section#sec1 > div {
 
   header > p {
     font-size: 1em;
+  }
+
+  /* SECTION */
+
+  .code {
+    font-size: .7em;
+  }
+
+  .div-code {
+    width: 250px;
+    justify-content: left;
+  }
+
+  /* SECTION 1 */
+
+  section#sec1 > div {
+    gap: 15px;
+  }
+
+  div.card {
+    width: 220px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  div.card > div.content {
+    padding: 23px;
+    gap: 10px;
+  }
+
+  #hectimg {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  div.content > p {
+    font-size: .7em;
+    text-align: center;
   }
 }
