@@ -75,7 +75,7 @@
         </picture>
         <div class="content">
           <p><span class="destaque" style="color: #5F6EF4;">Leaffy</span></p>
-          <p>Website da start-up Leaffy, que promove a conscientização ambiental. Possui um design prático e totalmente responsivo, um sistema de rotas dinâmico e escalável, Posts feitos a partir de um sistema completo e prático de CRUD e um formulário com envio de Email automático. Está no ar utilizando os serviços de domínio e hospedagem da Hostgator, com o protocolo HTTPS.</p>
+          <p>Website da startup Leaffy, criada como projeto de TCC durante o Ensino Médio Integrado ao Técnico em Desenvolvimento de Sistemas na Etec de Peruíbe. A plataforma foi desenvolvida com o objetivo de promover a conscientização ambiental de forma acessível e interativa, reunindo conteúdos e recursos voltados à educação ambiental. O projeto foi apresentado e validado por uma banca avaliadora, recebendo nota máxima como resultado final.</p>
           <p><span class="destaque" style="color: #5F6EF4;">Tecnologias:</span></p>
           <p>PHP, Composer, HTML5, CSS3, Javascript</p>
           <div class="link-proj">
@@ -92,7 +92,7 @@
         </picture>
         <div class="content">
           <p><span class="destaque" style="color: #5F6EF4;">Polls API</span></p>
-          <p>API de enquetes em tempo real em Typescript no NodeJS com Prisma, em Docker Containers. Através de requisições HTTP é possível criar enquetes e suas opções, e utilizando WebSockets, os votos são registrados e mostrados em tempo real. A API conta com prevenções de ataques e invasões das enquetes.</p>
+          <p>API de enquetes em tempo real desenvolvida em TypeScript e Node.js, utilizando Prisma e Docker Containers. Através de requisições HTTP, é possível criar enquetes e suas opções, enquanto os votos são registrados e exibidos em tempo real por meio de WebSockets. O projeto também conta com medidas de prevenção contra ataques e invasões. Seu desenvolvimento foi importante para consolidar e colocar em prática conhecimentos técnicos relacionados ao desenvolvimento de APIs, comunicação em tempo real e infraestrutura.</p>
           <p><span class="destaque" style="color: #5F6EF4;">Tecnologias:</span></p>
           <p>Typescript, NodeJS, Prisma, Docker, HTTP e WebSockets</p>
           <div class="link-proj">
@@ -127,7 +127,7 @@
         </picture>
         <div class="content">
           <p><span class="destaque" style="color: #5F6EF4;">Pass In</span></p>
-          <p>API de gestão de participantes em eventos presenciais, permitindo que organizadores cadastrem eventos e disponibilizem páginas públicas para inscrição. Os participantes podem emitir suas credenciais, que são escaneadas no dia do evento para validar e registrar sua entrada.</p>
+          <p>API de gestão de participantes em eventos presenciais, permitindo que organizadores cadastrem eventos e disponibilizem páginas públicas para inscrição. Os participantes podem emitir suas credenciais, que são escaneadas no dia do evento para validar e registrar sua entrada. O desenvolvimento do projeto também contribuiu para consolidar conhecimentos técnicos, colocando em prática conceitos de desenvolvimento de APIs, gerenciamento de dados e criação de soluções voltadas a necessidades reais.</p>
           <p><span class="destaque" style="color: #5F6EF4;">Tecnologias:</span></p>
           <p>Typescript, NodeJS, Prisma, Fastify (rotas) e Zod</p>
           <div class="link-proj">
@@ -144,7 +144,7 @@
         </picture>
         <div class="content">
           <p><span class="destaque" style="color: #5F6EF4;">Marcelo Mattos Pinturas - Landing Page</span></p>
-          <p>Landing page profissional para divulgação dos serviços de um pintor, desenvolvida com HTML5, CSS3 e JavaScript. A página apresenta os serviços oferecidos, trabalhos realizados e informações de contato, proporcionando uma apresentação visual dos serviços e facilitando o contato de potenciais clientes.</p>
+          <p>Landing page profissional para divulgação dos serviços de um pintor, desenvolvida com HTML5, CSS3 e JavaScript. A página apresenta os serviços oferecidos, trabalhos realizados e informações de contato, proporcionando uma apresentação visual dos serviços e facilitando o contato de potenciais clientes. Atualmente, a página auxilia **Marcelo Mattos a aumentar sua visibilidade e alcançar novos clientes**, fortalecendo sua presença profissional no meio digital.</p>
           <p><span class="destaque" style="color: #5F6EF4;">Tecnologias:</span></p>
           <p>HTML5, CSS3, Javascript</p>
           <div class="link-proj">
@@ -157,20 +157,29 @@
   </section>
 
   <!-- SESSÃO 4 -->
-  <section id="sec4" class="flex-center">
+ <section id="sec4" class="flex-center">
     <div class="flex-center">
       <div class="div-code">
         <h1 class="code">$hector->listar<span class="destaque">SoftSkills()</span>;</h1>
       </div>
       <div class="flexbox">
-        <div class="box flex-center"><p>Trabalho em equipe</p></div>
-        <div class="box flex-center"><p>Comunicação</p></div>
-        <div class="box flex-center"><p>Organização</p></div>
-        <div class="box flex-center"><p>Orientação a processos</p></div>
-        <div class="box flex-center"><p>Adaptabilidade</p></div>
+        <div class="box flex-center" data-skill="trabalho-equipe" tabindex="0" role="button" aria-haspopup="dialog"><p>Trabalho em equipe</p></div>
+        <div class="box flex-center" data-skill="comunicacao" tabindex="0" role="button" aria-haspopup="dialog"><p>Comunicação</p></div>
+        <div class="box flex-center" data-skill="organizacao" tabindex="0" role="button" aria-haspopup="dialog"><p>Organização</p></div>
+        <div class="box flex-center" data-skill="orientacao-processos" tabindex="0" role="button" aria-haspopup="dialog"><p>Orientação à processos</p></div>
+        <div class="box flex-center" data-skill="adaptabilidade" tabindex="0" role="button" aria-haspopup="dialog"><p>Adaptabilidade</p></div>
       </div>
     </div>
   </section>
+
+  <!-- MODAL SOFT SKILLS -->
+  <div id="skillModalOverlay" class="modal-overlay">
+    <div id="skillModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle">
+      <button id="skillModalClose" class="modal-close" aria-label="Fechar">&times;</button>
+      <h2 id="skillModalTitle" class="modal-title"></h2>
+      <p id="skillModalText" class="modal-text"></p>
+    </div>
+  </div>
 
   <!-- SESSÃO 5 -->
   <div id="secCont" class="flex-center">
@@ -186,5 +195,7 @@
   <footer class="flex-center">
     <h2>Obrigado pela visita!   •   @hect-vs</h2>
   </footer>
+
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>

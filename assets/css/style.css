@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 :root {
   --font: "Work Sans", sans-serif;
   --displayFont: "JetBrains Mono", monospace;
@@ -137,15 +138,23 @@ section#sec1 > div {
 
 div.card {
   display: flex;
+  align-items: stretch;
   border-radius: 10px;
   width: 700px;
-  height: 280px;
+  min-height: 280px;
   box-shadow: 0px 0px 120px #4554de8c;
   background-color: #24242494;
 }
 
+div.card > picture {
+  flex-shrink: 0;
+  width: 260px;
+}
+
 #hectimg {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
   border-radius: 10px 0 0 10px;
 }
 
@@ -215,7 +224,11 @@ div.flexbox > div.box > p {
 }
 
 div.flexbox > div.box > p:hover {
-  cursor: default;
+  cursor: pointer;
+}
+
+div.flexbox > div.box {
+  cursor: pointer;
 }
 
 div.flexbox > div.box:hover {
@@ -224,6 +237,95 @@ div.flexbox > div.box:hover {
   padding: 5px;
   font-size: 120%;
   box-shadow: 0px 0px 120px #4554dedb;
+}
+
+/* MODAL SOFT SKILLS */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .3s ease,
+              background-color .3s ease,
+              backdrop-filter .3s ease,
+              -webkit-backdrop-filter .3s ease,
+              visibility 0s linear .3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, .7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: opacity .3s ease,
+              background-color .3s ease,
+              backdrop-filter .3s ease,
+              -webkit-backdrop-filter .3s ease,
+              visibility 0s linear 0s;
+}
+
+.modal {
+  position: relative;
+  width: fit-content;
+  max-width: min(90vw, 500px);
+  min-width: 280px;
+  background-color: #1a1a1a;
+  border: 1px solid #4555de55;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0px 0px 120px #4554dedb;
+  transform: scale(.85) translateY(20px);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--displayFont);
+  font-size: 1.8em;
+  line-height: 1;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.modal-close:hover {
+  color: var(--purple);
+}
+
+.modal-title {
+  font-family: var(--displayFont);
+  color: var(--purple);
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  padding-right: 30px;
+}
+
+.modal-text {
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 1.05em;
+  line-height: 1.5em;
 }
 
 /* SECTION 4 */
@@ -357,8 +459,14 @@ footer > h2 {
     gap: 10px;
   }
 
+  div.card > picture {
+    width: 100%;
+  }
+
   #hectimg {
     width: 100%;
+    height: auto;
+    object-fit: unset;
     border-radius: 10px 10px 0 0;
   }
 
@@ -388,5 +496,29 @@ footer > h2 {
 
   div#secCont > div {
     font-size: .7em;
+  }
+
+  /* MODAL SOFT SKILLS */
+  .modal {
+    width: 85vw;
+    min-width: 0;
+    max-width: 85vw;
+    padding: 25px;
+  }
+
+  .modal-title {
+    font-size: 1.2em;
+    padding-right: 25px;
+  }
+
+  .modal-text {
+    font-size: .85em;
+    line-height: 1.4em;
+  }
+
+  .modal-close {
+    font-size: 1.5em;
+    top: 10px;
+    right: 12px;
   }
 }
